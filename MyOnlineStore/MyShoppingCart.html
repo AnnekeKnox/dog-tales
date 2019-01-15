@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Dog Tales-Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="catalogue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>Dog Tales
+            <i class="fas fa-paw" id="paw"></i>
+            <img class="img-fluid logo thumbnail" id="navImg" src="https://www.centreofexcellence.com/app/uploads/2016/06/Dogs-and-mindfulness-4-ways-dogs-can-help-remind-us-to-be-mindful.jpg"/>
+            <div class="topnav">
+                <a href="homepage.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="bookings.html">Bookings</a>
+                <a href="OnlineStore.html">Catalogue</a>
+                <a href="contact.html">Contact Us</a>
+                <a class="active" href=" MyShoppingCart.html">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <div class="search-container">
+                    <form class="searchbar">
+                        <input type="text" placeholder="Search" name="search">
+                        <button type="submit" id="searchBtn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </h1>
+    </div>
+
+    <div class="running" id="runDog">
+        <img class="runAnimate" src="runningDog2.gif" alt="https://orig00.deviantart.net/6a31/f/2014/277/c/a/ezgif_com_gif_maker__6__by_awkward_dinozaur-d81l0xu.gif">
+    </div>
+
+    <div class="clearfix">
+
+        <h2>Your Shopping Cart</h2>
+        <table id="cartOverview">
+
+        </table>
+
+        <br>
+
+        <img class="shoppic" id="shopDog" src="https://st2.depositphotos.com/1146092/6986/i/950/depositphotos_69864811-stock-photo-dog-with-shopping-cart.jpg">
+
+        <form class="shipping" id="shipForm">
+            <div class="form-group">
+                <label for="coupon">Discount Coupon (R50 off):</label>
+                <input type="text" class="form-control" id="coupon">
+
+                <button type="button" class="btn btn-success" onclick="applyCoupon()">Apply Coupon</button>
+
+            </div>
+
+            <div class="form-group">
+                <label for="sel1">Shipping Options:</label>
+                <select class="form-control" id="collDel">
+                    <option>Collection</option>
+                    <option>Delivery</option>
+                </select>
+            </div>
+
+            <label class="radio-inline" id="same">
+                <input type="radio" name="delivery" class="radio" onClick="setDeliveryOption('express')" value="200">Same Day Delivery -
+                <strong>add R200</strong>
+            </label>
+            <br>
+            <label class="radio-inline" id="normal">
+                <input type="radio" name="delivery" class="radio" onClick="setDeliveryOption('standard')" value="100">Normal Delivery (3-5 Days) -
+                <strong>add R100</strong>
+            </label>
+
+
+            <button type="button" class="btn btn-primary" onclick="confirmOrder()">Confirm Order</button>
+        </form>
+
+        <br>
+
+        <h4>Need to do some calcuations of your own?</h4>
+        <button type="button" class="btn btn-danger" id="showCalc">Show Calculator</button>
+        <button type="button" class="btn btn-danger" id="hideCalc">Hide Calculator</button>
+
+        <div id="calculator" style:"display: none;">
+            <div class="calbody">
+                <form name="lcdform">
+                    <input id="lcdu" name="lcdsu" type="text" value="" />
+                    <input id="lcd" name="lcds" type="text" value="0" />
+                </form>
+
+                <div id="calbutton">
+                    <button id="num1" onclick="document.lcdform.lcdsu.value += 1;">1</button>
+                    <button id="num2" onclick="document.lcdform.lcdsu.value += 2;">2</button>
+                    <button id="num3" onclick="document.lcdform.lcdsu.value += 3;">3</button>
+                    <button id="operationplus" onclick="document.lcdform.lcdsu.value += '+';">+</button>
+
+
+
+                    <button id="num4" onclick="document.lcdform.lcdsu.value += 4;">4</button>
+                    <button id="num5" onclick="document.lcdform.lcdsu.value += 5;">5</button>
+                    <button id="num6" onclick="document.lcdform.lcdsu.value += 6;">6</button>
+                    <button id="operationmult" onclick="document.lcdform.lcdsu.value += '*';">*</button>
+
+
+
+                    <button id="num7" onclick="document.lcdform.lcdsu.value += 7;">7</button>
+                    <button id="num8" onclick="document.lcdform.lcdsu.value += 8;">8</button>
+                    <button id="num9" onclick="document.lcdform.lcdsu.value += 9;">9</button>
+                    <button id="operationminus" onclick="document.lcdform.lcdsu.value += '-';">-</button>
+                    <button id="clr" onclick="clr();">C</button>
+
+
+
+                    <button id="num0" onclick="document.lcdform.lcdsu.value += 0;">0</button>
+                    <button id="operationdivid" onclick="document.lcdform.lcdsu.value += '/';">/</button>
+                    <button id="sumbit" onclick="document.lcdform.lcds.value = eval(document.lcdform.lcdsu.value)">=</button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        cartHtmlBuilder.build();
+
+        $(document).ready(function () {
+            $("#navImg").mouseenter(function () {
+                $(this).effect("shake");
+            });
+        });
+
+        function keepFading($obj) {
+            $obj.fadeToggle(3000, function () {
+                keepFading($obj)
+            });
+        }
+        keepFading($("#paw"));
+
+        $(document).ready(function (e) {
+            var width = "+=" + $(document).width();
+            $("#runDog").animate({
+                left: width
+            }, 5000, function () {
+                $("#runDog").css("display", "none");
+            });
+        });
+
+        $(function () {
+            $("#shopDog").effect("bounce", { times: 4, distance: 200 }, 400);
+        });
+
+        var button = document.getElementById('button');
+
+        function clr() {
+            document.lcdform.lcds.value = "0";
+            document.lcdform.lcdsu.value = "";
+            return;
+        }
+
+        var clicks = 0;
+        function onClick() {
+            clicks += 1;
+            document.getElementById("clicks").innerHTML = clicks;
+        };
+
+        $(document).ready(function () {
+            $("#hideCalc").click(function () {
+                $("#calculator").hide();
+            });
+            $("#showCalc").click(function () {
+                $("#calculator").show();
+            });
+        });
+
+    </script>
+
+</body>

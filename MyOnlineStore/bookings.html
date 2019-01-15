@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Bookings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>Dog Tales
+            <i class="fas fa-paw" id="paw"></i>
+            <img class="img-fluid logo" id="navImg" src="https://www.centreofexcellence.com/app/uploads/2016/06/Dogs-and-mindfulness-4-ways-dogs-can-help-remind-us-to-be-mindful.jpg"/>
+            <div class="topnav">
+                <a href="homepage.html">Home</a>
+                <a href="services.html">Services</a>
+                <a class="active" href="bookings.html">Bookings</a>
+                <a href="OnlineStore.html">Catalogue</a>
+                <a href="contact.html">Contact Us</a>
+                <a href=" MyShoppingCart.html">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <div class="search-container">
+                    <form class="searchbar">
+                        <input type="text" placeholder="Search" name="search">
+                        <button type="submit" id="searchBtn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </h1>
+    </div>
+    <div class="running" id="runDog">
+        <img class="runAnimate" src="runningDog2.gif" alt="https://orig00.deviantart.net/6a31/f/2014/277/c/a/ezgif_com_gif_maker__6__by_awkward_dinozaur-d81l0xu.gif">
+    </div>
+
+    <div class="container">
+        <h2>Bookings</h2>
+        <p>Request a booking by filling out the form below.</p>
+        <form class="form-horizontal">
+            <div class="form-horizontal row">
+                <label class="col-md-2">First Name:</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Enter your first name">
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <label class="col-md-2">Surname:</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Enter your Surname">
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <label class="col-md-2">Mobile Number:</label>
+                <div class="col-md-10">
+                    <input type="number" class="form-control" placeholder="Enter your Mobile Number">
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <label class="col-md-2">Email:</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Enter your Email address">
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <label class="col-md-2">Name of Dog:</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Enter your furbaby's name">
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <label class="col-md-2">Arrival Date and time:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00">
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <label class="col-md-2">Departure Date and time:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00">
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <label class="col-md-2">Pick-Up and Drop-Off required?</label>
+                <div class="col-md-10">
+                    <input type="radio" name="optradio">Yes
+                    <input type="radio" name="optradio">No
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <label class="col-md-2">Breed:</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Enter the breed of dog">
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <label class="col-md-2">Age:</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Enter your dog's age">
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <label class="col-md-2" for="comment">Any special requirements?</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" rows="5" id="comment" placeholder="Enter your message"></textarea>
+                </div>
+            </div>
+
+            <div class="submit_btn">
+                <button type="submit" class="btn btn-primary btn-block">Submit
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#navImg").mouseenter(function () {
+                $(this).effect("shake");
+            });
+        });
+
+        function keepFading($obj) {
+            $obj.fadeToggle(3000, function () {
+                keepFading($obj)
+            });
+        }
+        keepFading($("#paw"));
+
+        $(document).ready(function (e) {
+            var width = "+=" + $(document).width();
+            $("#runDog").animate({
+                left: width
+            }, 5000, function () {
+                $("#runDog").css("display", "none");
+            });
+        });
+
+
+    </script>
+</body>
